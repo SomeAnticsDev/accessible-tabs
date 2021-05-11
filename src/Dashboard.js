@@ -27,20 +27,20 @@ function Orders() {
   return (
     <Flex as="section" direction="column" gap={2} className="Orders">
       <h2>Order History</h2>
-      <div className="Tabs">
-        <div className="Tabs__tablist">
-          <div data-selected className="Tabs__tab">
+      <Tabs defaultValue="all">
+        <TabList>
+          <Tab value="all">
             All<VisuallyHidden> Orders</VisuallyHidden>
-          </div>
-          <div className="Tabs__tab">
+          </Tab>
+          <Tab value="pending">
             Pending<VisuallyHidden> Orders</VisuallyHidden>
-          </div>
-          <div className="Tabs__tab">
+          </Tab>
+          <Tab value="fulfilled">
             Fulfilled<VisuallyHidden> Orders</VisuallyHidden>
-          </div>
-        </div>
-        <div className="Tabs__panels">
-          <div className="Tabs__panel">
+          </Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel value="all">
             <Flex direction="column" gap={1}>
               <h4 id="heading-all">All Orders</h4>
               <OrderList
@@ -48,8 +48,8 @@ function Orders() {
                 orders={[].concat(FULFILLED_ORDERS, PENDING_ORDERS)}
               />
             </Flex>
-          </div>
-          <div className="Tabs__panel" hidden>
+          </TabPanel>
+          <TabPanel value="pending">
             <Flex direction="column" gap={1}>
               <h4 id="heading-pending">Pending Orders</h4>
               <OrderList
@@ -57,8 +57,8 @@ function Orders() {
                 orders={PENDING_ORDERS}
               />
             </Flex>
-          </div>
-          <div className="Tabs__panel" hidden>
+          </TabPanel>
+          <TabPanel value="fulfilled">
             <Flex direction="column" gap={1}>
               <h4 id="heading-fulfilled">Fulfilled Orders</h4>
               <OrderList
@@ -66,9 +66,9 @@ function Orders() {
                 orders={FULFILLED_ORDERS}
               />
             </Flex>
-          </div>
-        </div>
-      </div>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Flex>
   );
 }
