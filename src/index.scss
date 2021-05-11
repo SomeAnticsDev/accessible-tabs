@@ -1,0 +1,97 @@
+:root {
+  --size-container: 800px;
+  --size-gap: 20px;
+
+  --color-neutral-00: #fff;
+  --color-neutral-10: #f2f2f3;
+  --color-neutral-20: #d6d4d8;
+  --color-neutral-30: #b9b7bc;
+  --color-neutral-40: #9d99a1;
+  --color-neutral-50: #807c85;
+  --color-neutral-60: #656169;
+  --color-neutral-70: #4a474d;
+  --color-neutral-80: #2e2c31;
+  --color-neutral-90: #131214;
+  --color-neutral-100: #000;
+
+  --color-rose-10: #f6e6ec;
+  --color-rose-20: #e0acc0;
+  --color-rose-30: #c97395;
+  --color-rose-40: #b0396b;
+  --color-rose-50: #950040;
+  --color-rose-60: #750032;
+  --color-rose-70: #560025;
+  --color-rose-80: #360017;
+  --color-rose-90: #16000a;
+
+  --color-purp-10: #f1e6f3;
+  --color-purp-20: #d0acd6;
+  --color-purp-30: #ae75b8;
+  --color-purp-40: #8c3e99;
+  --color-purp-50: #680979;
+  --color-purp-60: #51075e;
+  --color-purp-70: #390543;
+  --color-purp-80: #220327;
+  --color-purp-90: #0a010c;
+
+  --color-yell-10: #fafad9;
+  --color-yell-20: #f0f2a3;
+  --color-yell-30: #e5e76c;
+  --color-yell-40: #d8da36;
+  --color-yell-50: #c8cb00;
+  --color-yell-60: #a0a200;
+  --color-yell-70: #777900;
+  --color-yell-80: #4f5000;
+  --color-yell-90: #262700;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: var(--color-purp-90);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+// Layout utility components
+@import "Layout";
+
+// Generic components
+@import "Tabs";
+@import "Table";
+
+// Layout specific components
+@import "App";
+@import "Header";
+@import "Footer";

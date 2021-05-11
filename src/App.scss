@@ -1,0 +1,13 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--color-neutral-10);
+  color: var(--color-neutral-90);
+
+  &__content {
+    padding: calc(var(--size-gap) * 2) 0;
+
+    @media screen and (min-width: 600px) {
+      padding: calc(var(--size-gap) * 4) 0;
+    }
+  }
+}

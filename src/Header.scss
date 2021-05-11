@@ -1,0 +1,29 @@
+.Header {
+  background: var(--color-purp-90);
+  background: linear-gradient(
+    90deg,
+    var(--color-purp-90) 0%,
+    var(--color-purp-50) 35%,
+    var(--color-rose-50) 100%
+  );
+  color: #fff;
+  padding: var(--size-gap) 0;
+
+  &__page-title {
+    font-weight: bold;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-line: none;
+
+    &.active {
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-color: #e6ea02;
+      font-weight: bold;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 3px;
+    }
+  }
+}

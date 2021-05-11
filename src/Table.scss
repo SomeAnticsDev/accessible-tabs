@@ -1,0 +1,76 @@
+@mixin shared-cell-styles {
+  display: table-cell;
+  padding: 1rem;
+  font-size: 0.875rem;
+  text-align: left;
+  font-family: inherit;
+  line-height: 1.43;
+  border-bottom: 1px solid var(--color-neutral-30);
+  vertical-align: inherit;
+  @content;
+
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+    flex-direction: row-reverse;
+  }
+}
+
+.Table {
+  width: 100%;
+  display: table;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid var(--color-neutral-40);
+}
+
+.TableHead {
+  display: table-header-group;
+  vertical-align: middle;
+  border: 0;
+}
+
+.TableBody {
+  display: table-row-group;
+  vertical-align: middle;
+  border: 0;
+}
+
+.TableCell {
+  @include shared-cell-styles {
+    color: var(--color-neutral-80);
+    line-height: 1.5rem;
+    font-weight: inherit;
+  }
+}
+
+.TableRow {
+  color: inherit;
+  display: table-row;
+  outline: 0;
+  border: 0;
+  vertical-align: middle;
+}
+
+.TableHeadRow {
+  color: inherit;
+  display: table-row;
+  outline: 0;
+  border: 0;
+  vertical-align: middle;
+}
+
+.TableHeadCell {
+  @include shared-cell-styles {
+    color: var(--color-neutral-90);
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+}

@@ -1,0 +1,141 @@
+@mixin reset-block {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+@mixin reset-font {
+  font-size: 100%;
+  font: inherit;
+  text-decoration: none;
+  text-align: inherit;
+  color: inherit;
+}
+
+@mixin reset-text-block {
+  @include reset-block;
+  @include reset-font;
+}
+
+@mixin reset-button {
+  @include reset-block;
+  @include reset-font;
+  background: 0;
+  cursor: unset;
+  appearance: none;
+}
+
+@mixin reset-list {
+  @include reset-block;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+@mixin element-resets {
+  &--reset-button {
+    @include reset-button;
+  }
+
+  &--reset-block {
+    @include reset-text-block;
+  }
+
+  &--reset-paragraph,
+  &--reset-heading {
+    @include reset-text-block;
+  }
+
+  &--reset-text-block {
+    @include reset-text-block;
+  }
+
+  &--reset-list {
+    @include reset-block;
+    @include reset-list;
+  }
+}
+
+.Flex {
+  display: flex;
+
+  @each $val in 0, 1 {
+    &--flex-grow-#{$val} {
+      flex-grow: $val;
+    }
+
+    &--flex-shrink-#{$val} {
+      flex-shrink: $val;
+    }
+  }
+
+  @each $dir in row, column {
+    &--fd-#{$dir} {
+      flex-direction: $dir;
+    }
+  }
+
+  @each $justify in flex-start, flex-end, center, space-between, space-around,
+    space-evenly, end, start
+  {
+    &--jc-#{$justify} {
+      justify-content: $justify;
+    }
+  }
+
+  @each $justify in normal, flex-start, flex-end, center, space-between,
+    space-around, space-evenly, end, start
+  {
+    &--ac-#{$justify} {
+      align-content: $justify;
+    }
+  }
+
+  @each $justify in flex-start, flex-end, center, stretch, baseline {
+    &--ai-#{$justify} {
+      align-items: $justify;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    $gap: if($i < 10, unquote("0#{$i}"), $i);
+    &--gap-#{$gap} {
+      gap: if($i == 1, var(--size-gap), calc(var(--size-gap) * #{$i}));
+    }
+  }
+
+  @include element-resets;
+}
+
+.Container {
+  display: block;
+  width: calc(100% - (var(--size-gap) * 2));
+  max-width: var(--size-container);
+
+  @include element-resets;
+
+  @each $val in 0, 1 {
+    &--flex-grow-#{$val} {
+      flex-grow: $val;
+    }
+
+    &--flex-shrink-#{$val} {
+      flex-shrink: $val;
+    }
+  }
+}
+
+.Box {
+  display: block;
+
+  @include element-resets;
+
+  @each $val in 0, 1 {
+    &--flex-grow-#{$val} {
+      flex-grow: $val;
+    }
+
+    &--flex-shrink-#{$val} {
+      flex-shrink: $val;
+    }
+  }
+}
